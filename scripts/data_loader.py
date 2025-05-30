@@ -1,6 +1,7 @@
 import json
 import os
 
+
 def load_json_data(folder_path):
     data = []
     for file in os.listdir(folder_path):

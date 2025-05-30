@@ -7,6 +7,7 @@ def upsert_customer(conn, customer_id, transaction_date):
             SET last_transaction_date = EXCLUDED.last_transaction_date
         """, (customer_id, transaction_date))
 
+
 def upsert_transaction(conn, record):
     with conn.cursor() as cur:
         cur.execute("""
