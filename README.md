@@ -79,4 +79,4 @@ The customers table has the latest transaction date for each customer.
 
 If something goes wrong, you’ll see a clear error log in the database!
 
-
+I've also included SQL data analysis queries which you'll find in scripts/data_analysis_queries.sql
