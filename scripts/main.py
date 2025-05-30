@@ -4,15 +4,16 @@ from processor import validate_record
 from db_writer import upsert_customer, upsert_transaction
 from error_logger import log_error
 
+
 def main():
     conn = psycopg2.connect(
         dbname='snoop_data_pipeline',
-        user='postgres',     
+        user='postgres',
         password='MITTS',
         host='localhost',
         port='5432'
     )
-    
+
     records = load_json_data('./data')
 
     for record in records:
@@ -23,8 +24,9 @@ def main():
 
         upsert_customer(conn, record['customerId'], record['transactionDate'])
         upsert_transaction(conn, record)
-    
+
     conn.close()
+
 
 if __name__ == '__main__':
     main()
